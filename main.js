@@ -35,8 +35,12 @@ class Producto {
         this.color = color;
         this.stock = stock;
     }
-}
 
+
+vender(cantidad) {
+    this.stock = this.stock - cantidad;
+}
+}
 //Inicializo arrays para las categorias de los productos
 const remeras = [];
 const buzos = [];

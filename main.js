@@ -87,4 +87,28 @@ if (prendaSeleccionada <= 0) {
     alert("Ingresa un ID valido");
 }
 
+//Solicito al usuario la cantidad de la prenda
+let cantidad = parseInt(prompt("Ingrese la cantidad de unidades que quiere comprar de la prenda seleccionada:"));
+
+//Costo de envio promedio dentro de CABA
+const envio = 50;
+
+//Salidas de consola indicando el precio final de la compra segun la prenda elegida
+if (prendaSeleccionada <= 0) {
+    alert("Ingresa un ID valido");
+} else if (prendaSeleccionada <= 4) {
+    alert("El precio final de tu compra es: $" + calcularPrecio(remeraBuscada.precio, cantidad, envio));
+    alert("¡Que lo disfrutes!")
+    remeraBuscada.vender(cantidad);
+} else if (prendaSeleccionada <= 7) {
+    alert("El precio final de tu compra es: $" + calcularPrecio(buzoBuscado.precio, cantidad, envio));
+    alert("¡Que lo disfrutes!")
+    buzoBuscado.vender(cantidad);
+} else if (prendaSeleccionada <= 9) {
+    alert("El precio final de tu compra es: $" + calcularPrecio(pantalonBuscado.precio, cantidad, envio));
+    alert("¡Que lo disfrutes!")
+    pantalonBuscado.vender(cantidad);
+} else {
+    alert("Ingresa un ID valido");
+}
 

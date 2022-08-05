@@ -73,23 +73,17 @@ for (const pantalon of pantalones) {
     alert("ID (" + pantalon.id + ") - " + pantalon.nombre);
 }
 
+//Funcion para calcular el precio final de la compra
+function calcularPrecio(precioPrenda, cantidadPrenda, costoEnvio) {
+    return ((precioPrenda * 1.21) * cantidadPrenda) + costoEnvio;
+}
+
 //Solicito al usuario el ID de la prenda
 let prendaSeleccionada = parseInt(prompt("Ingrese el ID de la prenda que desea comprar:"));
 const remeraBuscada = remeras.find(remera => remera.id === prendaSeleccionada);
 const buzoBuscado = buzos.find(buzo => buzo.id == prendaSeleccionada);
 const pantalonBuscado = pantalones.find(pantalon => pantalon.id == prendaSeleccionada);
 
-if (prendaSeleccionada <= 0) {
-    alert("Ingresa un ID valido");
-} else if (prendaSeleccionada <=4) {
-    alert("Seleccionaste " +  remeraBuscada.nombre + "\nToca aceptar para agregarlo a tu carrito"); 
-} else if (prendaSeleccionada <=7) {
-    alert("Seleccionaste " + buzoBuscado.nombre + "\nToca aceptar para agregarlo a tu carrito");
-} else if (prendaSeleccionada <= 9) {
-    alert("Seleccionaste " + pantalonBuscado.nombre + "\nToca aceptar para agregarlo a tu carrito");
-} else {
-    alert("Ingresa un ID valido");
-}
 
 //Solicito al usuario la cantidad de la prenda
 let cantidad = parseInt(prompt("Ingrese la cantidad de unidades que quiere comprar de la prenda seleccionada:"));
